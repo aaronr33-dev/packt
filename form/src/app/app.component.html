@@ -1,0 +1,29 @@
+<mat-card class= "signup-card" >
+  <mat-card-title>
+    {{title}}
+  </mat-card-title>
+  </h1>
+  <form [formGroup] = "signUpForm" (ngSubmit) = "onSubmit()">
+    <div>
+      Username:
+      <mat-form-field>
+        <input matInput type="text" placeholder="username" name="username" formControlName="username">
+      </mat-form-field>
+    </div>
+    <div>
+      Pasword:
+      <mat-form-field>
+        <input matInput type="password" placeholder="password" name="password" formControlName="password">
+      </mat-form-field>
+    </div>
+    <div>
+      Email:
+      <mat-form-field>
+        <input matInput type="email" placeholder="email" name="email" formControlName="email">
+      </mat-form-field>
+    </div>
+    <button> mat-raised-button color="primary" type="submit" [disabled]="!signUpForm.valid"> Submit </button>
+
+  </form>
+</mat-card>
+<router-outlet></router-outlet>
